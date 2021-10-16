@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
@@ -7,13 +7,20 @@ int main()
     cout << "Введите число: ";
     cin >> b;
     b += 1;
-    for (int i = 0; i < b; i++)
+    if (b > 0 and b < 100)
     {
-        a[i] = i;
-        if (a[i] % 5 == 0)
+        for (int i = 0; i < b; i++)
         {
-            c = a[i] + c;
+            a[i] = i;
+            if (a[i] % 5 == 0)
+            {
+                c = a[i] + c;
+            }
         }
+    }
+    else
+    {
+        cout << "Некорректный запрос.";
     }
     cout << c;
     return 0;

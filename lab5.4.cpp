@@ -1,9 +1,10 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
     setlocale(0, "Russian");
-    int a[50], c = 0, b;
+    int a[50], c = 0, b = 0;
+    srand(time(NULL));
     for (int i = 0; i < 50; i++)
     {
         a[i] = rand() % 11 - 5;

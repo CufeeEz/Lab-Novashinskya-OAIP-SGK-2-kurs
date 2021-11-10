@@ -1,27 +1,23 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
 	setlocale(0, "Russian");
-	int y, x, n;
-	y = 0;
+	int y = 0, summ = 0, n;
 	cout << "Введите число N: ";
 	cin >> n;
-	if (n <= 4)
+	if (n <= 1)
 	{
 		cout << "Введено неверное значение!";
 	}
-	else
+	do
 	{
-		for (x = 1; x < n + 1; x++)
+		y++;
+		if (y % 5 == 0)
 		{
-
-			if (x % 5 == 0)
-			{
-				y = x + y;
-			}
+			summ += y;
 		}
-		cout << y << endl;
-	}
+	} while (summ < n);
+	cout << summ;
 	return(0);
 }

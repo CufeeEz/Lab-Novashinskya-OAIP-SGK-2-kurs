@@ -1,39 +1,42 @@
-﻿// решение не совсем такое, буду переделывать 
 #include <iostream>
 using namespace std;
 int main()
 {
     setlocale(0, "Russian");
-    int a[5];
+    int a[5], kol = 0;
     cout << "Введите 5 целых чисел" << endl;
     for (int i = 0; i < 5; i++)
     {
         cin >> a[i];
     }
-    if (a[0] == a[1] or a[0] == a[2] or a[0] == a[3] or a[0] == a[4])
+    for (int i = 0; i < 5; i++)
     {
-        cout << a[0] << "=" << a[0];
+        for (int k = 0; k <5; k++)
+        {
+            if (a[i] == a[k])
+            {
+                kol+=1;
+            }
+        }
     }
-    else if(a[1] == a[0] or a[1] == a[2] or a[1] == a[3] or a[1] == a[4])
+    switch (kol)
     {
-        cout << a[1] << "=" << a[1];
-    }
-    else if (a[2] == a[0] or a[2] == a[1] or a[2] == a[3] or a[2] == a[4])
-    {
-        cout << a[2] << "=" << a[2];
-    }
-    else if (a[3] == a[0] or a[3] == a[1] or a[3] == a[2] or a[3] == a[4])
-    {
-        cout << a[2] << "=" << a[2];
-    }
-    else if (a[4] == a[0] or a[4] == a[1] or a[4] == a[2] or a[4] == a[3])
-    {
-        cout << a[2] << "=" << a[2];
-    }
-    else
-    {
+    case 5:
         cout << "Совпадений нет";
+        break;
+    case 7:
+        cout << "Найдено 2 совпадения";
+        break;
+    case 11:
+        cout << "Найдено 3 совпадения";
+        break;
+    case 17:
+        cout << "Найдено 4 совпадения";
+        break;
+    case 25:
+        cout << "Найдено 5 совпадений";
+        break;
     }
     return 0;
 }
- 
+ // 5 7 11 17 25
